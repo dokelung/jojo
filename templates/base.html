@@ -84,7 +84,7 @@
             </div>
             {% endif %}
 
-        	<div class="uk-grid uk-margin-large-top">
+            <div class="uk-grid uk-margin-large-top">
                 <div class="uk-width-medium-1-10">
 
                     {% if SHARE_BUTTONS %}
@@ -131,27 +131,27 @@
                     {% endif %}
 
                 </div>
-    	    	<div class="uk-width-medium-7-10">
+                <div class="uk-width-medium-7-10">
                     <div class="uk-margin-top">
                         <!-- content -->
                         {% block content %}
                         {% endblock content %}
                     </div>
-    	    	</div>
-    			<div class="uk-width-medium-2-10">
+                </div>
+                <div class="uk-width-medium-2-10">
 
-    			    <!-- author info -->
+                    <!-- author info -->
                     {% if AUTHOR_INFO %}
-    			    <div class="uk-panel uk-panel-box">
-    					<div class="uk-panel-badge uk-badge"> About Me </div>
-    					<h3 class="uk-panel-title"> {{ AUTHOR_INFO.id }} </h3>
+                    <div class="uk-panel uk-panel-box">
+                        <div class="uk-panel-badge uk-badge"> About Me </div>
+                        <h3 class="uk-panel-title"> {{ AUTHOR_INFO.id }} </h3>
                         <img class="uk-thumbnail uk-thumbnail-small uk-align-center"
                              src="{{ SITEURL }}/theme/img/{{AUTHOR_INFO.photo}}"
                              alt="{{ AUTHOR_INFO.id }}">
                         <p>
                             <ul class="uk-list">
                                 {% for kw, link in AUTHOR_INFO.intro_keywords %}
-    				               <li> I am <a href="{{link}}">{{kw}}</a></li>
+                                   <li> I am <a href="{{link}}">{{kw}}</a></li>
                                 {% endfor %}
                             </ul>
                             {% for p in AUTHOR_INFO.intro %}
@@ -174,7 +174,7 @@
                                 </a>
                             {% endfor %}
                         {% endif %}
-					</div>
+                    </div>
                     {% endif %}
 
                     <!-- newest article -->
@@ -218,24 +218,24 @@
                         {% endfor %}
                     {% endif %}
 
-					<!-- related links -->
+                    <!-- related links -->
                     {% if RELATED_LINKS %}
-					<div class="uk-panel uk-panel-box">
-					   <ul class="uk-nav uk-nav-parent-icon" data-uk-nav>
-    					   <li class="uk-parent">
-        					   <a href="#"> Related Links </a>
-        					   <ul class="uk-nav-sub">
+                    <div class="uk-panel uk-panel-box">
+                       <ul class="uk-nav uk-nav-parent-icon" data-uk-nav>
+                           <li class="uk-parent">
+                               <a href="#"> Related Links </a>
+                               <ul class="uk-nav-sub">
                                     {% for name, link in RELATED_LINKS %}
-            					       <li><a href="{{link}}" target="_blank"> {{name}} </a></li>
+                                       <li><a href="{{link}}" target="_blank"> {{name}} </a></li>
                                     {% endfor %}
-        					   </ul>
-    					   </li>
-					   </ul>
-					</div>
+                               </ul>
+                           </li>
+                       </ul>
+                    </div>
                     {% endif %}
 
-    			</div>
-			</div>
+                </div>
+            </div>
 
             <!-- footer -->
             {% if FOOTER %}

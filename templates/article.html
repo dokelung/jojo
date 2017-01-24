@@ -7,22 +7,22 @@
 {% endblock location %}
 
 {% block share %}
-	<div class="uk-panel jojo-share" data-uk-sticky>
+    <div class="uk-panel jojo-share" data-uk-sticky>
         <ul class="uk-nav uk-nav-side">
             <li>
-            	<a href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" taget="_blank" class="uk-button">
-            		<i class="uk-icon-facebook-square"></i> Share
-            	</a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" taget="_blank" class="uk-button">
+                    <i class="uk-icon-facebook-square"></i> Share
+                </a>
             </li>
             <li>
-            	<a href="https://twitter.com/intent/tweet?text={{ article.title|striptags|urlencode }}&url={{ SITEURL }}/{{ article.url }}&via={{ TWITTER_USERNAME }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="uk-button" target="_blank">
-            		<i class="uk-icon-twitter"></i> Share
-            	</a>
+                <a href="https://twitter.com/intent/tweet?text={{ article.title|striptags|urlencode }}&url={{ SITEURL }}/{{ article.url }}&via={{ TWITTER_USERNAME }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="uk-button" target="_blank">
+                    <i class="uk-icon-twitter"></i> Share
+                </a>
             </li>
             <li>
-            	<a href="https://plus.google.com/share?url={{ SITEURL }}/{{ article.url }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank" class="uk-button">
-            		<i class="uk-icon-google-plus-square"></i> Share
-            	</a>
+                <a href="https://plus.google.com/share?url={{ SITEURL }}/{{ article.url }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank" class="uk-button">
+                    <i class="uk-icon-google-plus-square"></i> Share
+                </a>
             </li>
         </ul>
     </div>
@@ -31,8 +31,8 @@
 {% block content %}
     <article class="uk-article">
 
-  	    <h1 class="uk-article-title">
-    	   <a href="{{SITEURL}}/{{ article.url }}" rel="bookmark"> {{ article.title }} </a>
+        <h1 class="uk-article-title">
+           <a href="{{SITEURL}}/{{ article.url }}" rel="bookmark"> {{ article.title }} </a>
         </h1>
 
         {% if article.tags %}
@@ -40,20 +40,20 @@
                 <i class="uk-icon-tags"></i>
                 {% for tag in article.tags %}
                     <div class="uk-badge uk-badge-notification">
-                		<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag | escape }}</a>
-                	</div>
+                        <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag | escape }}</a>
+                    </div>
                 {% endfor %}
             </div>
         {% endif %}
 
         <!-- meta -->
-  	    <p class="uk-article-meta">
+        <p class="uk-article-meta">
             {{ article.locale_date }}
-  	    </p>
+        </p>
 
-  	    <hr class="uk-article-divider">
+        <hr class="uk-article-divider">
 
-    	{{ article.content }}
-  	</article>
+        {{ article.content }}
+    </article>
 
 {% endblock content %}

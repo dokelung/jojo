@@ -7,14 +7,14 @@
 {% block content %}
    <article class="uk-article">
         <dl>
-      		{% set previous_date = False %}
-      		{% for article in dates %}
-        		{% if article.locale_date != previous_date %}
-          			{% set previous_date = article.locale_date %}
-      				<dt>{{ article.locale_date }}</dt>
-        		{% endif %}
-      			<dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
-      		{% endfor %}
-    	</dl>
+            {% set previous_date = False %}
+            {% for article in dates %}
+                {% if article.locale_date != previous_date %}
+                    {% set previous_date = article.locale_date %}
+                    <dt>{{ article.locale_date }}</dt>
+                {% endif %}
+                <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+            {% endfor %}
+        </dl>
     </article>
 {% endblock content %}

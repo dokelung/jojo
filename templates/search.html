@@ -1,26 +1,26 @@
 {% extends "base.html" %}
 
 {% block extra_js %}
-	<script src="{{ SITEURL }}/theme/js/tipuesearch/tipuesearch_content.js"></script>
+    <script src="{{ SITEURL }}/theme/js/tipuesearch/tipuesearch_content.js"></script>
     <script src="{{ SITEURL }}/theme/js/tipuesearch/tipuesearch_set.js"></script>
     <script src="{{ SITEURL }}/theme/js/tipuesearch/tipuesearch.min.js"></script>
     <script>
-    	$(document).ready(function() {
-    	  	$('#tipue_search_input').tipuesearch({
-    	    	'mode' : 'json',
-    	      	'show': 10,
-    	      	'newWindow': false,
+        $(document).ready(function() {
+            $('#tipue_search_input').tipuesearch({
+                'mode' : 'json',
+                'show': 10,
+                'newWindow': false,
                 'showURL': false,
-    	      	'contentLocation': '{{ SITEURL }}/tipuesearch_content.json'
-    	  	});
-    	});
-  	</script>
+                'contentLocation': '{{ SITEURL }}/tipuesearch_content.json'
+            });
+        });
+    </script>
 {% endblock extra_js %}
 
 {% block location %}
-	<li class="uk-active"><span> search </span></li>
+    <li class="uk-active"><span> search </span></li>
 {% endblock location %}
 
 {% block content %}
-	<div id="tipue_search_content"></div>
+    <div id="tipue_search_content"></div>
 {% endblock content %}
