@@ -147,7 +147,7 @@
     					<h3 class="uk-panel-title"> {{ AUTHOR_INFO.id }} </h3>
                         <img class="uk-thumbnail uk-thumbnail-small uk-align-center"
                              src="{{ SITEURL }}/theme/img/{{AUTHOR_INFO.photo}}"
-                             alt="dokelung">
+                             alt="{{ AUTHOR_INFO.id }}">
                         <p>
                             <ul class="uk-list">
                                 {% for kw, link in AUTHOR_INFO.intro_keywords %}
@@ -208,7 +208,7 @@
                                     <h3 class="uk-panel-title"> {{panel.title}} </h3>
                                 {% endif %}
                                 {% if panel.photo %}
-                                    <img class="uk-thumbnail uk-thumbnail-small uk-align-center" src="{{ SITEURL }}/theme/img/{{panel.photo}}" alt="it's django">
+                                    <img class="uk-thumbnail uk-thumbnail-small uk-align-center" src="{{ SITEURL }}/theme/img/{{panel.photo}}" alt="{{panel.title}}">
                                 {% endif %}
                                 <p> {{panel.content}} </p>
                                 {% if panel.link %}
