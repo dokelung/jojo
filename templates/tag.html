@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block location %}
+    <li><a href="{{SITEURL}}/tags.html"> tag </a></li>
+    <li><a href="{{SITEURL}}/tag/{{tag}}"> {{tag}} </a></li>
+    <li class="uk-active"><span> index{{articles_page.number}} </span></li>
+{% endblock location %}
+
+{% block pre_next %}
+    <li>
+        <a href="{% if articles_previous_page %}{{ SITEURL }}/{{ articles_previous_page.url }}{% endif %}" class="uk-button">
+            <i class="uk-icon-chevron-left"></i> Prev
+        </a>
+        <a href="{% if articles_next_page %}{{ SITEURL }}/{{ articles_next_page.url }}{% endif %}" class="uk-button">
+            <i class="uk-icon-chevron-right"></i> Next
+        </a>
+    </li>
+{% endblock pre_next %}
+
+{% block content %}
+    <article class="uk-article">
+        {% for article in articles_page.object_list %}
+            <h1 class="uk-article-title">
+                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"> {{ article.title }} </a>
+            </h1>
+            <p class="uk-article-meta">
+                {{ article.locale_date }}
+            </p>
+            <p>{{ article.summary|striptags }}</p>
+            <!--<p> {{ ' '.join(article.content.split(' ')[0:50])|striptags }}...</p>-->
+            <p class="uk-text-right jojo-read-more"><a href="{{ SITEURL }}/{{ article.url }}">Read More...</a></p>
+            <hr class="uk-article-divider">
+        {% endfor %}
+    </article>
+
+    {% if DEFAULT_PAGINATION and articles_paginator.num_pages > 1 %}
+    <ul class="uk-pagination">
+        {% if articles_previous_page %}<li><a href="{{ SITEURL }}/{{ articles_previous_page.url }}"><i class="uk-icon-angle-double-left"></i></a></li>{% endif %}
+        {% if articles_previous_page %}<li><a href="{{ SITEURL }}/{{ articles_previous_page.url }}">{{ articles_previous_page.number }}</a></li>{% endif %}
+        <li class="uk-active"><span>{{ articles_page.number }}</span></li>
+        {% if articles_next_page %}<li><a href="{{ SITEURL }}/{{ articles_next_page.url }}">{{ articles_next_page.number }}</a></li>{% endif %}
+        {% if articles_next_page %}<li><a href="{{ SITEURL }}/{{ articles_next_page.url }}"><i class="uk-icon-angle-double-right"></i></a></li>{% endif %}
+    </ul>
+    {% endif %}
+{% endblock content %}

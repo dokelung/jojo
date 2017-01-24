@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> {{ SITENAME }} </title>
+    <link rel="shortcut icon" href="{{ SITEURL }}/theme/img/{{SHORTCUT_ICON}}" />
+
+    <script src="{{ SITEURL }}/theme/js/jquery-3.1.1.min.js"></script>
+
+    <!-- extra css -->
+    {% block extra_css %}{% endblock extra_css%}
+
+    <!-- uikit basic -->
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/uikit.min.css"/>
+    <script src="{{ SITEURL }}/theme/js/uikit.min.js"></script>
+
+    <!-- uk components -->
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/components/sticky.css"/>
+    <script src="{{ SITEURL }}/theme/js/components/sticky.js"></script>
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/components/search.css"/>
+    <script src="{{ SITEURL }}/theme/js/components/search.js"></script>
+
+    <!-- self defined  -->
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/highlight.css"/>
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css"/>
+
+</head>
+<body>
+
+    <main class="jojo-theme">
+        <div class="uk-container uk-container-center">
+
+            <!-- nav -->
+            {% if NAV %}
+            <nav id="jojo-page-top" class="uk-navbar jojo-main-nav">
+                <a href="{{ SITEURL }}" class="uk-navbar-brand"> {{ NAV.sitename }} </a>
+
+                {% if NAV.navitems %}
+                <ul class="uk-navbar-nav">
+                    {% for item in NAV.navitems %}
+                        <li {% if item.secondary %}class="uk-parent" data-uk-dropdown{% endif %}>
+                            <a href="{{item.primary[1]}}"> {{item.primary[0]}} </a>
+                            {% if item.secondary %}
+                                <div class="uk-dropdown uk-dropdown-navbar">
+                                    <ul class="uk-nav uk-nav-navbar">
+                                        {% for subitem in item.secondary %}
+                                            <li {% if subitem.type %}class="uk-nav-{{subitem.type}}"{% endif %}>
+                                                {% if subitem.name %}
+                                                    {{subitem.name}}
+                                                {% endif %}
+                                                {% if subitem.link %}
+                                                    <a href="{{subitem.link[1]}}"> {{subitem.link[0]}} </a>
+                                                {% endif %}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                {% if NAV.tipue_search %}
+                <div class="uk-navbar-flip">
+                    <div class="uk-navbar-content">
+                        <form class="uk-search" data-uk-search="{source:'my-results.json'}" action="{{SITEURL}}/search.html">
+                            <input id="tipue_search_input" class="uk-search-field" type="search" name="q" autocomplete="off" required placeholder="Search...">
+                        </form>
+                    </div>
+                </div>
+                {% endif %}
+
+            </nav>
+            {% endif %}
+
+            {% if LOCATION %}
+            <div class="uk-panel uk-panel-box uk-panel-box-secondary uk-panel-hover" id="jojo-location-panel">
+                <ul class="uk-breadcrumb">
+                    <li><a href="#" class="uk-icon-map-marker"></a></li>
+                    <li><a href="{{ SITEURL }}"> home </a></li>
+                    {% block location %}
+                    {% endblock location %}
+                </ul>
+            </div>
+            {% endif %}
+
+        	<div class="uk-grid uk-margin-large-top">
+                <div class="uk-width-medium-1-10">
+
+                    {% if SHARE_BUTTONS %}
+                    {% block share %}
+                    <div class="uk-panel jojo-share" data-uk-sticky>
+                        <ul class="uk-nav uk-nav-side">
+                            <li>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" taget="_blank" class="uk-button">
+                                    <i class="uk-icon-facebook-square"></i> Share
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/intent/tweet?text={{ SITEURL|striptags|urlencode }}&url={{ SITEURL }}&via={{ TWITTER_USERNAME }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="uk-button" target="_blank">
+                                    <i class="uk-icon-twitter"></i> Share
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://plus.google.com/share?url={{ SITEURL }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank" class="uk-button">
+                                    <i class="uk-icon-google-plus-square"></i> Share
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    {% endblock share %}
+                    {% endif %}
+
+                    {% if CONTROL_BUTTONS %}
+                    <div class="uk-panel jojo-share" data-uk-sticky="{top:300}">
+                        <ul class="uk-nav uk-nav-side">
+                            <li>
+                                <a href="#jojo-page-top" class="uk-button" data-uk-smooth-scroll>
+                                    <i class="uk-icon-chevron-up"></i> Top
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#jojo-page-bottum" class="uk-button" data-uk-smooth-scroll>
+                                    <i class="uk-icon-chevron-down"></i> Bot
+                                </a>
+                            </li>
+                            {% block pre_next %}
+                            {% endblock pre_next %}
+                        </ul>
+                    </div>
+                    {% endif %}
+
+                </div>
+    	    	<div class="uk-width-medium-7-10">
+                    <div class="uk-margin-top">
+                        <!-- content -->
+                        {% block content %}
+                        {% endblock content %}
+                    </div>
+    	    	</div>
+    			<div class="uk-width-medium-2-10">
+
+    			    <!-- author info -->
+                    {% if AUTHOR_INFO %}
+    			    <div class="uk-panel uk-panel-box">
+    					<div class="uk-panel-badge uk-badge"> About Me </div>
+    					<h3 class="uk-panel-title"> {{ AUTHOR_INFO.id }} </h3>
+                        <img class="uk-thumbnail uk-thumbnail-small uk-align-center"
+                             src="{{ SITEURL }}/theme/img/{{AUTHOR_INFO.photo}}"
+                             alt="dokelung">
+                        <p>
+                            <ul class="uk-list">
+                                {% for kw, link in AUTHOR_INFO.intro_keywords %}
+    				               <li> I am <a href="{{link}}">{{kw}}</a></li>
+                                {% endfor %}
+                            </ul>
+                            {% for p in AUTHOR_INFO.intro %}
+                                <p> {{p}} </p>
+                            {% endfor %}
+                        </p>
+                        <p class="uk-text-right">
+                            <a href="{{AUTHOR_INFO.url}}"> More About Me... </a>
+                        </p>
+                        <hr>
+                        {% if AUTHOR_INFO.social %}
+                            <h3 class="uk-panel-title"> Contacts </h3>
+                            {% for name, link in AUTHOR_INFO.social.icons %}
+                                <a href="{{link}}"
+                                   class="{% if AUTHOR_INFO.social.style.hover %} uk-icon-hover {% endif %}
+                                          {% if AUTHOR_INFO.social.style.button%} uk-icon-button{% endif %}
+                                          uk-icon-{{AUTHOR_INFO.social.style.size}}
+                                          uk-align-left
+                                          uk-icon-{{name}}">
+                                </a>
+                            {% endfor %}
+                        {% endif %}
+					</div>
+                    {% endif %}
+
+                    <!-- newest article -->
+                    {% if NEWEST_ARTICALS %}
+                    <div class="uk-panel uk-panel-box">
+                        <div class="uk-panel-badge uk-badge uk-badge-danger"> Newest </div>
+                        <h3 class="uk-panel-title"> Newest Articles </h3>
+                        <ul class="uk-list uk-list-space">
+                        {% if articles|length > NEWEST_ARTICALS %}
+                            {% for article in articles[0:NEWEST_ARTICALS] %}
+                                <li><a href="{{article.url}}"> {{ article.title }} </a></li>
+                            {% endfor %}
+                        {% else %}
+                            {% for article in articles %}
+                                <li><a href="{{article.url}}"> {{ article.title }} </a></li>
+                            {% endfor %}
+                        {% endif %}
+                        </ul>
+                    </div>
+                    {% endif %}
+
+                    {% if SIMPLE_PANELS %}
+                        {% for panel in SIMPLE_PANELS %}
+                            <div class="uk-panel uk-panel-box">
+                                {% if panel.badge %}
+                                    <div class="uk-panel-badge uk-badge {% if panel.badge.type %}uk-badge-{{panel.badge.type}}{% endif %}">
+                                        {{panel.badge.string}}
+                                    </div>
+                                {% endif %}
+                                {% if panel.title %}
+                                    <h3 class="uk-panel-title"> {{panel.title}} </h3>
+                                {% endif %}
+                                {% if panel.photo %}
+                                    <img class="uk-thumbnail uk-thumbnail-small uk-align-center" src="{{ SITEURL }}/theme/img/{{panel.photo}}" alt="it's django">
+                                {% endif %}
+                                <p> {{panel.content}} </p>
+                                {% if panel.link %}
+                                    <p class="uk-text-right"> <a href="{{panel.link.1}}"> {{panel.link.0}} </a> </p>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+					<!-- related links -->
+                    {% if RELATED_LINKS %}
+					<div class="uk-panel uk-panel-box">
+					   <ul class="uk-nav uk-nav-parent-icon" data-uk-nav>
+    					   <li class="uk-parent">
+        					   <a href="#"> Related Links </a>
+        					   <ul class="uk-nav-sub">
+                                    {% for name, link in RELATED_LINKS %}
+            					       <li><a href="{{link}}" target="_blank"> {{name}} </a></li>
+                                    {% endfor %}
+        					   </ul>
+    					   </li>
+					   </ul>
+					</div>
+                    {% endif %}
+
+    			</div>
+			</div>
+
+            <!-- footer -->
+            {% if FOOTER %}
+            <footer id="jojo-page-bottum" class="uk-clearfix">
+            <div class="uk-panel uk-panel-box uk-margin-large-top uk-container-center">
+                <p class="uk-text-center">
+                    © 2017 {{ FOOTER.author }}. All rights reserved. <br>
+
+                    Code snippets in the pages are released under
+                    <a href="{{FOOTER.license.link}}"> {{FOOTER.license.name}} </a>
+                    , unless otherwise specified. <br><br>
+
+                    Powered by <a href= "http://docs.getpelican.com/">Pelican</a>.
+                    Theme <a href="#">jojo</a> by <a href="http://dokelung.me/">dokelung</a>
+                    powered by <a href="https://getuikit.com/v2/index.html"> uikit2 </a>
+                    inspired by <a href="https://github.com/lucachr/pelican-mg">mg</a>.
+                </p>
+            </div>
+            </footer>
+            {% endif %}
+
+        </div>
+    </main>
+
+    {% block extra_js %}{% endblock extra_js %}
+
+</body>
+</html>

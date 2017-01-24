@@ -1,0 +1,134 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic&subset=latin,latin-ext);
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url(http://fonts.googleapis.com/earlyaccess/cwtexhei.css);
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+@import url('https://fonts.googleapis.com/css?family=Courgette|Shadows+Into+Light');
+
+/* ===== setting =====*/
+
+html, nav, article, button, input, select, textarea, table, h1, h2, h3, h4, h5, h6 { 
+	font-family: "Noto Sans", "Noto Sans TC", "Open Sans", jaf-bernino-sans, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+}
+
+/* article table */
+article {
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 1.7em;
+	word-spacing: 3px;
+	text-align: justify; 
+    text-justify: inter-ideographic;
+    margin-after: 0.5em;
+    word-break: break-all; 
+}
+
+table {
+	font-size: 18px;
+	font-weight: 300;
+	word-spacing: 3px;
+}
+
+.jojo-read-more {
+	font-family: "Oswald";
+}
+
+/* code */
+
+pre {
+	font-family: Consolas, monospace, serif, "Noto Sans TC";
+	font-size: 16px;
+	line-height: 24px;
+}
+
+:not(pre)>code, :not(pre)>kbd, :not(pre)>samp {
+    font-size: 16px;
+}
+
+/* tags */
+.tags a {
+	font-size: 12px;
+	font-weight: 200; 
+	color: white;
+	text-decoration: none; 
+}
+
+/* icons */
+.uk-icon-envelope, .uk-icon-envelope-square {
+	color: #333;
+}
+
+.uk-icon-facebook, .uk-icon-facebook-square, .uk-icon-facebook-f, .uk-icon-facebook-officail {
+	color: #3b5998;
+}
+
+.uk-icon-google-plus, .uk-icon-google-plus-square {
+	color: #dd4b39;
+}
+
+.uk-icon-github, .uk-icon-github-square, .github-alt {
+	color: #333;
+}
+
+.uk-icon-linkedin, .uk-icon-linkedin-square {
+	color: #0077b5;
+}
+
+.uk-icon-twitter, .uk-icon-twitter-square {
+	color: #1da1f2;
+}
+
+.uk-icon-skype {
+	color: #00aff0;
+}
+
+.uk-icon-weixin {
+	color: #34bf49;
+}
+
+/* share */
+.jojo-share {
+	font-family: "Oswald";
+}
+
+/* nav */
+.jojo-main-nav {
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+
+.uk-navbar {
+	font-family: 'Oswald', "Noto Sans TC";
+}
+
+.uk-navbar-brand {
+	font-family: 'Oswald', "Noto Sans TC";
+	font-size: 40px;
+}
+
+.uk-navbar-nav > li > a {
+	font-family: 'Oswald', "Noto Sans TC", cursive;
+	font-size: 18px;
+	font-weight: 200;
+}
+
+#jojo-location-panel {
+	font-family: 'Oswald', "Noto Sans TC";
+	font-size: 14px;
+}
+
+/* panel */
+.uk-panel, .uk-panal-box, .uk-panel-title {
+	font-family: 'Oswald', "Noto Sans TC";
+}
+
+.uk-panel-badge {
+	font-family: "Noto Sans", "Noto Sans TC";
+}
+
+/* footer */
+footer {
+	font-family: 'Oswald', "Noto Sans TC";
+}

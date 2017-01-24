@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block location %}
+    <li class="uk-active"><span> tag </span></li>
+{% endblock location %}
+
+{% block content %}
+    <article class="uk-article">
+        {% for tag, articles in tags %}
+            <dl class="uk-description-list-line">
+                <dt> <a href="{{SITEURL}}/tag/{{tag}}"> {{tag}} </a></dt>
+                <dd> Totally {{articles|length}} articles </dd>
+            </dl>
+        {% endfor %}
+    </article>
+{% endblock content %}
