@@ -9,6 +9,10 @@ If you want to try jojo without your own pelican project:
 $ pip install pelican markdown
 $ git clone https://github.com/dokelung/jojo.git
 $ cd jojo/examples
+jojo/examples $ git clone https://github.com/getpelican/pelican-plugins.git
+$ cd pelican-plugins
+jojo/examples/pelican-plugins $ https://github.com/burakkose/just_table.git
+$ cd ..
 # edit exconf.py
 jojo/examples $ pelican content -o output -s exconf.py
 jojo/examples $ cd output
@@ -35,6 +39,7 @@ project
 $ cd themes
 themes $ git clone https://github.com/dokelung/jojo.git
 themes $ cd ..
+# install needed pelican plugins
 # edit pelicanconf.py
 # generate pelican site by the way you are familiar with
 # start the test server or publish site
