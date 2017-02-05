@@ -1,6 +1,8 @@
 # jojo
 A friendly Pelican theme
 
+![snapshot](snapshots/jojo-snapshot-1.PNG)
+
 ## quick start
 
 If you want to try jojo without your own pelican project:
