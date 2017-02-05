@@ -21,16 +21,6 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
-
-# Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
-
 DEFAULT_PAGINATION = 3
 
 # Uncomment following line if you want document-relative URLs when developing
@@ -40,16 +30,18 @@ PLUGIN_PATHS = ['pelican-plugins']
 
 PLUGINS = ['tipue_search', 'just_table']
 
+STATIC_PATHS = ['images']
+
 THEME = 'theme/jojo'
 
 # jojo theme settings =======================================================
 
-# put all photos in theme/static/img and just specify the base name of it in
+# put all photos under content/images and just specify the base name of it in
 # following settings
 
 # site settings
 DIRECT_TEMPLATES = ('index', 'categories', 'tags', 'archives', 'search')
-SHORTCUT_ICON = 'jojo.jpg' # put this photo in theme/static/img
+SHORTCUT_ICON = 'jojo.jpg'
 
 # right side panels
 SOCIAL = {

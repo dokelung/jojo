@@ -2,7 +2,7 @@
 <html>
 <head>
     <title> {{ SITENAME }} </title>
-    <link rel="shortcut icon" href="{{ SITEURL }}/theme/img/{{SHORTCUT_ICON}}" />
+    <link rel="shortcut icon" href="{{ SITEURL }}/images/{{SHORTCUT_ICON}}" />
 
     <script src="{{ SITEURL }}/theme/js/jquery-3.1.1.min.js"></script>
 
@@ -146,7 +146,7 @@
                         <div class="uk-panel-badge uk-badge"> About Me </div>
                         <h3 class="uk-panel-title"> {{ AUTHOR_INFO.id }} </h3>
                         <img class="uk-thumbnail uk-thumbnail-small uk-align-center"
-                             src="{{ SITEURL }}/theme/img/{{AUTHOR_INFO.photo}}"
+                             src="{{ SITEURL }}/images/{{AUTHOR_INFO.photo}}"
                              alt="{{ AUTHOR_INFO.id }}">
                         <p>
                             <ul class="uk-list">
@@ -208,7 +208,7 @@
                                     <h3 class="uk-panel-title"> {{panel.title}} </h3>
                                 {% endif %}
                                 {% if panel.photo %}
-                                    <img class="uk-thumbnail uk-thumbnail-small uk-align-center" src="{{ SITEURL }}/theme/img/{{panel.photo}}" alt="{{panel.title}}">
+                                    <img class="uk-thumbnail uk-thumbnail-small uk-align-center" src="{{ SITEURL }}/images/{{panel.photo}}" alt="{{panel.title}}">
                                 {% endif %}
                                 <p> {{panel.content}} </p>
                                 {% if panel.link %}
