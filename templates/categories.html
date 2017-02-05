@@ -8,7 +8,7 @@
     <article class="uk-article">
         {% for category, articles in categories %}
             <dl class="uk-description-list-line">
-                <dt> <a href="{{SITEURL}}/category/{{category}}"> {{category}} </a></dt>
+                <dt> <a href="{{SITEURL}}/category/{{category}}.html"> {{category}} </a></dt>
                 <dd> Totally {{articles|length}} articles </dd>
             </dl>
         {% endfor %}
