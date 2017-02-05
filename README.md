@@ -145,7 +145,6 @@ put all photos under content/images and just specify the base name of it in foll
 #### specify site icon
 
 ```python
-# site icon
 SHORTCUT_ICON = 'jojo.jpg'
 ```
 
@@ -255,8 +254,7 @@ CONTROL_BUTTONS = True
 
 #### settings of top elements
 
-```
-# top
+```python
 NAV = {
     'sitename': SITENAME,
     'navitems': (
