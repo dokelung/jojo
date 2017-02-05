@@ -183,8 +183,8 @@
                         <div class="uk-panel-badge uk-badge uk-badge-danger"> Newest </div>
                         <h3 class="uk-panel-title"> Newest Articles </h3>
                         <ul class="uk-list uk-list-space">
-                        {% if articles|length > NEWEST_ARTICALS %}
-                            {% for article in articles[0:NEWEST_ARTICALS] %}
+                        {% if articles|length > NEWEST_ARTICLES %}
+                            {% for article in articles[0:NEWEST_ARTICLES] %}
                                 <li><a href="{{article.url}}"> {{ article.title }} </a></li>
                             {% endfor %}
                         {% else %}
