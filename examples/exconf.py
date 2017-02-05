@@ -8,8 +8,6 @@ AUTHOR = 'jojo' # theme
 SITENAME = 'jojo' # theme
 SITEURL = 'http://localhost:8000' # theme
 
-PATH = 'content'
-
 TIMEZONE = 'Asia/Taipei'
 
 DEFAULT_LANG = 'zh'
@@ -21,26 +19,39 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-DEFAULT_PAGINATION = 3
+DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+DIRECT_TEMPLATES = ('index', 'categories', 'tags', 'archives', 'search')
+
+# path settings =============================================================
+PATH = 'content'
 
 PLUGIN_PATHS = ['pelican-plugins']
 
 PLUGINS = ['tipue_search', 'just_table']
 
-STATIC_PATHS = ['images']
+STATIC_PATHS = ['images', 'articles']
+
+ARTICLE_PATHS = ['articles']
+ARTICLE_URL = 'category/{category}/{slug}/'
+ARTICLE_SAVE_AS = 'category/{category}/{slug}/index.html'
+
+PAGE_URL = 'pages/{slug}/'
+PAGE_SAVE_AS = 'pages/{slug}/index.html'
 
 THEME = 'theme/jojo'
 
 # jojo theme settings =======================================================
 
-# put all photos under content/images and just specify the base name of it in
-# following settings
+"""
+put all photos under content/images and just specify the base name of it in
+following settings
+"""
 
 # site settings
-DIRECT_TEMPLATES = ('index', 'categories', 'tags', 'archives', 'search')
 SHORTCUT_ICON = 'jojo.jpg'
 
 # right side panels
@@ -74,7 +85,7 @@ AUTHOR_INFO = {
         'Hi, my name is jojo, I am a cute dog!',
         '你好，我是 jojo，一隻可愛的小狗。'
     ],
-    'url': os.path.join(SITEURL, 'pages', 'about-me.html'),
+    'url': os.path.join(SITEURL, 'pages', 'about-me'),
     'social': SOCIAL,
 }
 
@@ -90,8 +101,8 @@ SIMPLE_PANELS = (
             'type': 'danger',
         },
         'title': 'My Favorite Food',
-        'photo': 'steak.jpg',
-        'content': 'I really love steak!',
+        'photo': 'food.jpg',
+        'content': 'I really love it!',
         'link': ('Where to eat it?', '#'),
     },
 )
@@ -118,9 +129,9 @@ NAV = {
             'primary': ('Category', os.path.join(SITEURL, 'categories.html')),
             'secondary': (
                 {'type':'header', 'name':'Programming'},
-                {'link':('python', os.path.join(SITEURL, 'category', 'python')) },
+                {'link':('python', os.path.join(SITEURL, 'category', 'python.html')) },
                 {'type':'divider'},
-                {'link':('misc', os.path.join(SITEURL, 'category', 'misc'))},
+                {'link':('misc', os.path.join(SITEURL, 'category', 'misc.html'))},
             )
         },
         {
