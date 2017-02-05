@@ -14,15 +14,35 @@
 {% block content %}
     <article class="uk-article">
         {% for article in articles_page.object_list %}
-            <h1 class="uk-article-title">
-                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"> {{ article.title }} </a>
-            </h1>
-            <p class="uk-article-meta">
-                {{ article.locale_date }}
-            </p>
-            <p>{{ article.summary|striptags }}</p>
-            <!--<p> {{ ' '.join(article.content.split(' ')[0:50])|striptags }}...</p>-->
-            <p class="uk-text-right jojo-read-more"><a href="{{ SITEURL }}/{{ article.url }}">Read More...</a></p>
+            <div class="uk-grid">
+                <div class="uk-width-medium-2-10">
+                    {% if article.featured_image %}
+                        <img class="uk-thumbnail uk-thumbnail-large" src="{{ article.featured_image }}">
+                    {% else %}
+                        <div class="tags">
+                            {% for tag in article.tags[0:4] %}
+                                <div>
+                                    <i class="uk-icon-tag"></i>
+                                    <div class="uk-badge uk-badge-notification">
+                                        <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag | escape }}</a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="uk-width-medium-8-10">
+                    <h2>
+                        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"> {{ article.title }} </a>
+                    </h2>
+                    <p class="uk-article-meta">
+                        {{ article.locale_date }}
+                    </p>
+                    <p>{{ article.summary|striptags }}</p>
+                    <!--<p> {{ ' '.join(article.content.split(' ')[0:50])|striptags }}...</p>-->
+                    <p class="uk-text-right jojo-read-more"><a href="{{ SITEURL }}/{{ article.url }}">Read More...</a></p>
+                </div>
+            </div>
             <hr class="uk-article-divider">
         {% endfor %}
     </article>

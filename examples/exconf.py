@@ -31,7 +31,7 @@ PATH = 'content'
 
 PLUGIN_PATHS = ['pelican-plugins']
 
-PLUGINS = ['tipue_search', 'just_table']
+PLUGINS = ['tipue_search', 'just_table', "representative_image"]
 
 STATIC_PATHS = ['images', 'articles']
 
