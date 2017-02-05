@@ -42,7 +42,7 @@ ARTICLE_SAVE_AS = 'category/{category}/{slug}/index.html'
 PAGE_URL = 'pages/{slug}/'
 PAGE_SAVE_AS = 'pages/{slug}/index.html'
 
-THEME = 'theme/jojo'
+THEME = '..'
 
 # jojo theme settings =======================================================
 
@@ -185,3 +185,6 @@ JTABLE_TEMPLATE = """
     </tbody>
 </table>
 """
+
+# DISQUS_SITENAME = "your disqus shortname"
+# DISQUS_CONFIG = True
