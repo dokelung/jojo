@@ -89,7 +89,7 @@ AUTHOR_INFO = {
     'social': SOCIAL,
 }
 
-NEWEST_ARTICALS = 10 # set 0 to hide this panel
+NEWEST_ARTICLES = 10 # set 0 to hide this panel
 
 SIMPLE_PANELS = (
     {
