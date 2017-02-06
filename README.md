@@ -15,11 +15,10 @@ jojo/examples $ git clone https://github.com/getpelican/pelican-plugins.git
 $ cd pelican-plugins
 jojo/examples/pelican-plugins $ git clone https://github.com/burakkose/just_table.git
 $ cd ..
-# edit exconf.py
 jojo/examples $ pelican content -o output -s exconf.py
 jojo/examples $ cd output
 jojo/examples/output $ python -m pelican.server
-# open your browser and goto your SITEURL, that's all!
+# open your browser and goto http://localhost:8000, that's all!
 ```
 
 If you already have your pelican project like that:
@@ -28,12 +27,9 @@ If you already have your pelican project like that:
 project
     |--content
     |     |--...
-    |
     |--themes
     |     |--...
-    |
     |--pelicanconf.py
-    |
     |...
 ```
 
