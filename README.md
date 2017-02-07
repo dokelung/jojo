@@ -26,8 +26,6 @@ A friendly Pelican theme
 
 ## quick start
 
-Try jojo is easy:
-
 ```bash
 $ git clone https://github.com/dokelung/jojo.git
 $ cd jojo/examples
@@ -38,8 +36,8 @@ $ cd ..
 $ pelican content -o output -s exconf.py
 $ cd output
 $ python -m pelican.server
-# open your browser and goto http://localhost:8000, that's all!
 ```
+open your browser and goto http://localhost:8000, that's all!
 
 ## features
 
