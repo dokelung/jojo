@@ -43,9 +43,11 @@ Require pelican plugins:
 * just_table
 * representative_image: need beautifulsoup4
 
-## pelican settings
+## pelican basic settings
 
-### basic pelican settings
+Open `pelicanconf.py` to modify your settings:
+
+### basic settings
 
 See examples:
 
@@ -124,11 +126,11 @@ PAGE_SAVE_AS = 'pages/{slug}/index.html'
 THEME = 'path/to/jojo' # specify your own path to jojo
 ```
 
-### core settings of jojo
+## core settings of jojo
 
-put all photos under `content/images` and just specify their base names in following settings:
+Open `pelicanconf.py` to modify your settings and remember to put all photos under `content/images` and just specify their base names in following settings:
 
-#### specify site icon
+### specify site icon
 
 ```python
 SHORTCUT_ICON = 'jojo.jpg'
@@ -136,7 +138,7 @@ SHORTCUT_ICON = 'jojo.jpg'
 
 ![snapshot](snapshots/jojo-snapshot-icon.PNG)
 
-#### settings of right side panels
+### settings of right side panels
 
 jojo lets user set serveral panels in the right column, including:
 
@@ -145,7 +147,7 @@ jojo lets user set serveral panels in the right column, including:
 3. several user defined simple panel (set by `SIMPLE_PANELS`)
 4. a related links panel (set by `RELATED_LINKS`)
 
-##### author panel
+#### author panel
 
 ```python
 SOCIAL = {
@@ -197,7 +199,7 @@ AUTHOR_INFO = {
 
 ![snapshot](snapshots/jojo-snapshot-author.PNG)
 
-##### newest articles
+#### newest articles
 
 ```python
 NEWEST_ARTICLES = 10  # set 0 to hide this panel
@@ -207,7 +209,7 @@ NEWEST_ARTICLES = 10  # set 0 to hide this panel
 
 ![snapshot](snapshots/jojo-snapshot-newestarticles.PNG)
 
-##### user specified simple panels
+#### user specified simple panels
 
 ```python
 SIMPLE_PANELS = (
@@ -238,7 +240,7 @@ SIMPLE_PANELS = (
 
 ![snapshot](snapshots/jojo-snapshot-simplepanel.PNG)
 
-##### related links panel
+#### related links panel
 
 jojo supports a related links with *Accordion* effect:
 
@@ -255,7 +257,7 @@ RELATED_LINKS = (
 
 ![snapshot](snapshots/jojo-snapshot-relatedlinks.PNG)
 
-#### settings of left side buttons
+### settings of left side buttons
 
 jojo supports button tools in the left side column, including:
 
@@ -272,11 +274,11 @@ CONTROL_BUTTONS = True
 
 ![snapshot](snapshots/jojo-snapshot-leftsidebuttons.PNG)
 
-#### top elements
+### top elements
 
 jojo has a top navigator and a related links panel
 
-##### top navigator
+#### top navigator
 
 ```python
 NAV = {
@@ -309,7 +311,7 @@ NAV = {
 
 ![snapshot](snapshots/jojo-snapshot-nav.PNG)
 
-##### location panel
+#### location panel
 
 ```python
 LOCATION = True
@@ -319,7 +321,7 @@ LOCATION = True
 
 ![snapshot](snapshots/jojo-snapshot-location.PNG)
 
-#### settings of footer
+### settings of footer
 
 ```python
 FOOTER = {
@@ -334,7 +336,7 @@ FOOTER = {
 
 ![snapshot](snapshots/jojo-snapshot-footer.PNG)
 
-#### comment system
+### comment system
 
 ```python
 # DISQUS_SITENAME = "your disqus shortname"
