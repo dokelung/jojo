@@ -240,6 +240,8 @@ SIMPLE_PANELS = (
 
 ##### related links panel
 
+jojo supports a related links with *Accordion* effect:
+
 ```python
 RELATED_LINKS = (
     ('Pelican', 'http://getpelican.com/'),
@@ -249,16 +251,32 @@ RELATED_LINKS = (
 )
 ```
 
+* `RELATED_LINKS`: tuple of tuples, each element specify a related link with format `(LINK_NAME, URL)`
+
+![snapshot](snapshots/jojo-snapshot-relatedlinks.PNG)
+
 #### settings of left side buttons
 
-set `True` to enable buttons or `False` to hide them:
+jojo supports button tools in the left side column, including:
+
+1. a series of buttons to share your page to social networks (set by `SHARE_BUTTONS`)
+2. a series of buttons for going to previous/next page and/or to top/bottom of the current page
 
 ```python
 SHARE_BUTTONS = True
 CONTROL_BUTTONS = True
 ```
 
-#### settings of top elements
+* `SHARE_BUTTONS`: a boolean value
+* `CONTROL_BUTTONS`: a boolean value
+
+![snapshot](snapshots/jojo-snapshot-leftsidebuttons.PNG)
+
+#### top elements
+
+jojo has a top navigator and a related links panel
+
+##### top navigator
 
 ```python
 NAV = {
@@ -283,10 +301,23 @@ NAV = {
     'tipue_search': True,
 }
 ```
+* `sitename`: the logo name of the site
+* `navitems`: tuple of dictionaries, each element represents a menu item of navigator
+ * `primary`: first class menu item with format `(ITEM_NAME, URL)`
+ * `secondary`: the items of submenu, tuple of dictionaries
+* `tipue_search`: a bool value, set `True` to turn on site search engine
+
+![snapshot](snapshots/jojo-snapshot-nav.PNG)
+
+##### location panel
 
 ```python
 LOCATION = True
 ```
+
+* `LOCATION`: a bool value, set `True` to enable location bar
+
+![snapshot](snapshots/jojo-snapshot-location.PNG)
 
 #### settings of footer
 
@@ -301,9 +332,14 @@ FOOTER = {
 }
 ```
 
+![snapshot](snapshots/jojo-snapshot-footer.PNG)
+
 #### comment system
 
 ```python
 # DISQUS_SITENAME = "your disqus shortname"
 # DISQUS_CONFIG = True
 ```
+
+* `DISQUS_SITENAME`: specify your disqus shortname here to enable disqus comments system
+* `DISQUS_CONFIG`: set `True` to set disqus page identifier and page url for disqus to find thread and load content
