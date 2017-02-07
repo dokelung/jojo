@@ -3,6 +3,27 @@ A friendly Pelican theme
 
 ![snapshot](snapshots/jojo-snapshot-1.PNG)
 
+* [quick start](#quick-start)
+* [features](#features)
+* [requirements](#requirements)
+* [pelican basic settings](#pelican-basic-settings)
+ * [basic settings](#basic-settings)
+ * [templates](#templates)
+ * [paths](#paths)
+* [core settings of jojo](#core-settings-of-jojo)
+ * [site icon](#site-icon)
+ * [settings of right side panels](#settings-of-right-side-panels)
+  * [author panel](#author-panel)
+  * [newest articles](#newest-articles)
+  * [user specified simple panels]{#user-specified-simple-panels)
+  * [related links panel](#related-links-panel)
+ * [settings of left side buttons](#settings-of-left-side-buttons)
+ * [top elements](#top-elements)
+  * [top navigator](#top-navigator)
+  * [location panel](#location-panel)
+ * [settings of footer](#settings-of-footer)
+ * [comment system](#comment-system)
+
 ## quick start
 
 Try jojo is easy:
@@ -130,7 +151,7 @@ THEME = 'path/to/jojo' # specify your own path to jojo
 
 Open `pelicanconf.py` to modify your settings and remember to put all photos under `content/images` and just specify their base names in following settings:
 
-### specify site icon
+### site icon
 
 ```python
 SHORTCUT_ICON = 'jojo.jpg'
@@ -199,7 +220,7 @@ AUTHOR_INFO = {
 
 ![snapshot](snapshots/jojo-snapshot-author.PNG)
 
-#### newest articles
+#### newest articles panel
 
 ```python
 NEWEST_ARTICLES = 10  # set 0 to hide this panel
