@@ -15,7 +15,7 @@ A friendly Pelican theme
  * [settings of right side panels](#settings-of-right-side-panels)
   * [author panel](#author-panel)
   * [newest articles](#newest-articles)
-  * [user specified simple panels]{#user-specified-simple-panels)
+  * [user specified simple panels](#user-specified-simple-panels)
   * [related links panel](#related-links-panel)
  * [settings of left side buttons](#settings-of-left-side-buttons)
  * [top elements](#top-elements)
