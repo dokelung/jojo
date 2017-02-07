@@ -5,44 +5,27 @@ A friendly Pelican theme
 
 ## quick start
 
-If you want to try jojo without your own pelican project:
+Try jojo is easy:
 
 ```bash
-$ pip install pelican markdown
 $ git clone https://github.com/dokelung/jojo.git
 $ cd jojo/examples
-jojo/examples $ git clone https://github.com/getpelican/pelican-plugins.git
+$ git clone https://github.com/getpelican/pelican-plugins.git
 $ cd pelican-plugins
-jojo/examples/pelican-plugins $ git clone https://github.com/burakkose/just_table.git
+$ git clone https://github.com/burakkose/just_table.git
 $ cd ..
-jojo/examples $ pelican content -o output -s exconf.py
-jojo/examples $ cd output
-jojo/examples/output $ python -m pelican.server
+$ pelican content -o output -s exconf.py
+$ cd output
+$ python -m pelican.server
 # open your browser and goto http://localhost:8000, that's all!
 ```
 
-If you already have your pelican project like that:
+## features
 
-```
-project
-    |--content
-    |     |--...
-    |--themes
-    |     |--...
-    |--pelicanconf.py
-    |...
-```
-
-```bash
-$ cd themes
-themes $ git clone https://github.com/dokelung/jojo.git
-themes $ cd ..
-# install needed pelican plugins
-# edit pelicanconf.py
-# generate pelican site by the way you are familiar with
-# start the test server or publish site
-# open your browser and goto SITEURL to see it!
-```
+* [uikit2](https://getuikit.com/v2/) based theme (have nice look and easy to modify)
+* embedded site search engine [tipue_search](http://www.tipue.com/search/)
+* better chinese article look, guided by [十項讓長文章更容易閱讀的原則](https://wanderer.tw/%E7%B0%A1%E5%96%AE%E5%81%9A%E5%A5%BD%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88/)
+* [disqus](https://disqus.com/) comment system support
 
 ## requirements
 
@@ -64,7 +47,7 @@ Require pelican plugins:
 
 ### basic pelican settings
 
-See example:
+See examples:
 
 ```python
 AUTHOR = 'jojo'
@@ -143,7 +126,7 @@ THEME = 'path/to/jojo' # specify your own path to jojo
 
 ### core settings of jojo
 
-put all photos under content/images and just specify the base name of it in following settings:
+put all photos under `content/images` and just specify their base names in following settings:
 
 #### specify site icon
 
@@ -151,12 +134,18 @@ put all photos under content/images and just specify the base name of it in foll
 SHORTCUT_ICON = 'jojo.jpg'
 ```
 
+![snapshot](snapshots/jojo-snapshot-icon.PNG)
+
 #### settings of right side panels
 
-##### author panel
+jojo lets user set serveral panels in the right column, including:
 
-`AUTHOR_INFO` is used to set author panel.
-`SOCIAL` is a variable used in `AUTHOR` to specify your social network:
+1. an author panel (set by `AUTHOR_INFO`)
+2. a newest articles panel (set by `NEWEST_ARTICLES`)
+3. several user defined simple panel (set by `SIMPLE_PANELS`)
+4. a related links panel (set by `RELATED_LINKS`)
+
+##### author panel
 
 ```python
 SOCIAL = {
@@ -178,12 +167,7 @@ SOCIAL = {
         # ('weixin', '#'),
     )
 }
-```
 
-* `style`: modify it to adjust the appearence of social icons
-* `icons`: specify the social icons you want with format `(ICON_NAME, URL)`
-
-```python
 AUTHOR_INFO = {
     'id': AUTHOR,
     'photo': 'jojo.jpg',
@@ -200,20 +184,28 @@ AUTHOR_INFO = {
 }
 ```
 
-* `id`: is usually equal to `AUTHOR`
-* `photo`: photo of author (placed this image under content/images)
-* `intro_keywords`: tuple of tuples, each item represents a hyper link specified by format `(TEXT, URL)`
-* `intro`: list of strings
-* `url`: the url of about-me page
-* `social`: dictionary used to specify social networks
+* `SOCIAL` is a variable used in `AUTHOR` to specify your social network:
+ * `style`: modify it to adjust the appearence of social icons
+ * `icons`: specify the social icons you want with format `(ICON_NAME, URL)`
+* `AUTHOR_INFO`
+ * `id`: usually equal to `AUTHOR`
+ * `photo`: photo of author (place this image under `content/images`)
+ * `intro_keywords`: tuple of tuples, each item represents a hyper link specified by format `(TEXT, URL)`
+ * `intro`: list of strings to describe author
+ * `url`: the url of *about-me* page
+ * `social`: dictionary used to specify social networks
+
+![snapshot](snapshots/jojo-snapshot-author.PNG)
 
 ##### newest articles
-
-specify `NEWEST_ARTICLES` to enable related panel:
 
 ```python
 NEWEST_ARTICLES = 10  # set 0 to hide this panel
 ```
+
+* `NEWEST_ARTICLES`: an integer to specify the number of newest articles listed in *newest articles panel*.
+
+![snapshot](snapshots/jojo-snapshot-newestarticles.PNG)
 
 ##### user specified simple panels
 
@@ -234,6 +226,17 @@ SIMPLE_PANELS = (
     },
 )
 ```
+
+* `SIMPLE_PANELS`: a variable to set user specified simple panel
+ * `badge`: a dictionary
+   * `string`: panel badge name
+   * `type`: used to specify badge color
+ * `title`: panel name
+ * `photo`: pnael photo
+ * `content`: string to describe panel
+ * `link`: a tuple with format `(LINK_TITLE, URL)`
+
+![snapshot](snapshots/jojo-snapshot-simplepanel.PNG)
 
 ##### related links panel
 
