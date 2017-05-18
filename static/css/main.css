@@ -15,7 +15,7 @@ html, nav, article, button, input, select, textarea, table, h1, h2, h3, h4, h5, 
 
 /* article table */
 article {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 300;
     line-height: 1.7em;
     word-spacing: 3px;
@@ -26,7 +26,7 @@ article {
 }
 
 table {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 300;
     word-spacing: 3px;
 }
@@ -40,12 +40,12 @@ table {
 
 pre {
     font-family: Consolas, monospace, serif, "Noto Sans TC";
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
 }
 
 :not(pre)>code, :not(pre)>kbd, :not(pre)>samp {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 /* tags */
