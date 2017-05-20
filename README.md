@@ -45,6 +45,7 @@ open your browser and goto http://localhost:8000, that's all!
 * embedded site search engine [tipue_search](http://www.tipue.com/search/)
 * better chinese article look, guided by [十項讓長文章更容易閱讀的原則](https://wanderer.tw/%E7%B0%A1%E5%96%AE%E5%81%9A%E5%A5%BD%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88/)
 * [disqus](https://disqus.com/) comment system support
+* [google analytics](https://analytics.google.com/analytics/web/) google analytics support
 
 ## requirements
 
@@ -364,3 +365,11 @@ FOOTER = {
 
 * `DISQUS_SITENAME`: specify your disqus shortname here to enable disqus comments system
 * `DISQUS_CONFIG`: set `True` to set disqus page identifier and page url for disqus to find thread and load content
+
+## Google analytics
+
+```python
+# GOOGLE_ANALYTICS = "your google analytics number"
+```
+
+* `GOOGLE_ANALYTICS`: specify google analytics number of your site here
