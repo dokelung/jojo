@@ -366,7 +366,7 @@ FOOTER = {
 * `DISQUS_SITENAME`: specify your disqus shortname here to enable disqus comments system
 * `DISQUS_CONFIG`: set `True` to set disqus page identifier and page url for disqus to find thread and load content
 
-## Google analytics
+### Google analytics
 
 ```python
 # GOOGLE_ANALYTICS = "your google analytics number"
