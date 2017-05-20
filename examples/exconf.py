@@ -188,3 +188,5 @@ JTABLE_TEMPLATE = """
 
 # DISQUS_SITENAME = "your disqus shortname"
 # DISQUS_CONFIG = True
+
+# GOOGLE_ANALYTICS = "your google analytics number"
