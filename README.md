@@ -162,10 +162,18 @@ SHORTCUT_ICON = 'jojo.jpg'
 
 jojo lets user set serveral panels in the right column, including:
 
-1. an author panel (set by `AUTHOR_INFO`)
-2. a newest articles panel (set by `NEWEST_ARTICLES`)
-3. several user defined simple panel (set by `SIMPLE_PANELS`)
-4. a related links panel (set by `RELATED_LINKS`)
+1. a page view panel (set by `PAGEVIEW_URL`)
+2. an author panel (set by `AUTHOR_INFO`)
+3. a newest articles panel (set by `NEWEST_ARTICLES`)
+4. several user defined simple panel (set by `SIMPLE_PANELS`)
+5. a related links panel (set by `RELATED_LINKS`)
+
+#### page view panel
+
+```python
+# PAGEVIEW_URL = "your pageview image url fetched by http://www.free-counter.jp/"
+```
+* `PAGEVIEW_URL` is a url string fetched by hit counter service http://www.free-counter.jp/
 
 #### author panel
 

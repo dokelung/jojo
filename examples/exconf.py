@@ -55,6 +55,8 @@ following settings
 SHORTCUT_ICON = 'jojo.jpg'
 
 # right side panels
+# PAGEVIEW_URL = "your pageview image url fetched by http://www.free-counter.jp/"
+
 SOCIAL = {
     'style': {
         'size': 'medium', # small, medium, large
