@@ -1,5 +1,5 @@
 # jojo
-A friendly Pelican theme
+A friendly Pelican theme - [Live Demo](http://dokelung.me) here!
 
 ![snapshot](snapshots/jojo-snapshot-1.PNG)
 
