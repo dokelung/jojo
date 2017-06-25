@@ -13,8 +13,8 @@ html, nav, article, button, input, select, textarea, table, h1, h2, h3, h4, h5, 
     font-family: "Noto Sans", "Noto Sans TC", "Open Sans", jaf-bernino-sans, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 }
 
-/* article table */
-article {
+/* article table blockquote*/
+article, blockquote {
     font-size: 14px;
     font-weight: 300;
     line-height: 1.7em;
@@ -23,6 +23,10 @@ article {
     text-justify: inter-ideographic;
     margin-after: 0.5em;
     word-break: break-all;
+}
+
+strong {
+    font-weight: 500;
 }
 
 table {
