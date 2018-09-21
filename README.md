@@ -24,6 +24,10 @@ A friendly Pelican theme - [Live Demo](http://dokelung.me) here!
   * [settings of footer](#settings-of-footer)
   * [comment system](#comment-system)
 
+## Who's using jojo?
+
+* [Synalp](http://synalp.loria.fr/)
+
 ## quick start
 
 ```bash
